@@ -4,8 +4,17 @@ Returns: an integer
 '''
 def eating_cookies(n):
     # Your code here
+    #recursively call eating cookies down to 1
+    #add to n
 
-    pass
+    if n <= 1:
+        return 1
+    else:
+        print(n)
+        if n % 2 == 0:
+            return n + eating_cookies(n-1)
+        else:
+            return n + eating_cookies(n-1)
 
 if __name__ == "__main__":
     # Use the main function here to test out your implementation
