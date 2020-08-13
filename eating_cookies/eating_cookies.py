@@ -2,19 +2,16 @@
 Input: an integer
 Returns: an integer
 '''
-def eating_cookies(n):
+def eating_cookies(n, cache={}):
     # Your code here
-    #recursively call eating cookies down to 1
-    #add to n
-
-    if n <= 1:
+    #recursively call eating cookies down to 0
+    #base case
+    if n == 0:
         return 1
+    elif n < 0:
+        return 0
     else:
-        print(n)
-        if n % 2 == 0:
-            return n + eating_cookies(n-1)
-        else:
-            return n + eating_cookies(n-1)
+        return eating_cookies(n-1) + eating_cookies(n-2) + eating_cookies(n-3)
 
 if __name__ == "__main__":
     # Use the main function here to test out your implementation

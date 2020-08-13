@@ -6,7 +6,7 @@ from collections import namedtuple
 Item = namedtuple('Item', ['index', 'size', 'value'])
 
 def knapsack_solver(items, limit):
-    items.sort(key = lambda x: x.value, reverse=True)
+    items.sort(key = lambda x: x.value/x.size, reverse=True)
     #could be better sorted by value/weight ratio
     sack = []
     value = 0
@@ -17,6 +17,7 @@ def knapsack_solver(items, limit):
             value += items[i][2]
             sack.append(items[i][0])
             cur += items[i][1]
+    sack.sort()
     return {"Value": value, "Chosen": sack}
 
 
