@@ -4,8 +4,18 @@ Returns: a List of integers
 '''
 def moving_zeroes(arr):
     # Your code here
-
-    pass
+    # loop through the array and remove and append at the end if zero
+    i = 0
+    while i < len(arr):
+        if arr[i] != 0:
+            temp = arr.pop(i)
+            print(arr)
+            arr.insert(0, temp)
+            print(arr)
+            i += 1
+        else:
+            i += 1
+    return arr
 
 
 if __name__ == '__main__':
